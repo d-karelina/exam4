@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>Exam4</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <!--библиотека для автоматической генерации конструкторов, геттеров, сеттеров, тустринг и хэшкод
+            значение в конструкторах и сеттерах может проверять только на null
+            библиотека нужна только на этапе компиляции, не должна попадать в итоговый архив-->
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.18</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.5</version>
+        </dependency>
+        <!-- hibernate  - библиотека реализует технологию ORM (object relational mapping - библиотека)
+        Они связывают реляционные базы данных с концепциями ООП.
+        Название класса - название таблицы
+        Название полей - название столбцов
+        Типы данных - из типа данных полей
+        всю остальную доп.инфу - из аннотаций
+        hibernate используют jdbc, а jdbc использует тот драйвер, который мы пропишем
+        у библиотеки есть пул соединений
+        альтернатива - eclipseLink - являются реализациями JPA (java persistence API) -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.31.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>5.4.32.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+</project>
